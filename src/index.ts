@@ -25,12 +25,6 @@ client.on('ready', () => {
   console.log('Ready!');
 });
 
-client.on('messageCreate', (msg) => {
-  if (msg.content === 'ping') {
-    msg.reply('pong');
-  }
-});
-
 client.on('messageCreate', async (msg) => {
   if (!client.user) return;
   if (!msg.mentions.has(client.user.id)) return;
