@@ -36,3 +36,9 @@ OPENAI_API_KEY=
 ```
 npm run dev
 ```
+
+## Change Character
+1. Locate folder **lib** and open file character.ts
+2. Change text from `Luigi from Super Mario` to any other character
+
+Note that you can also add the franchise name to better specify where your character are from.
