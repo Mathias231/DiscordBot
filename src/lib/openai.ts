@@ -1,6 +1,7 @@
 import { Configuration, OpenAIApi } from 'openai';
 import { config } from 'dotenv';
 import discord from 'discord.js';
+import { character } from './character';
 
 config();
 
@@ -28,12 +29,13 @@ export const template = ({
     .reverse()
     .join('\n');
 
-  let prompt = `You ARE the character Luffy from One Piece and you must answer
+  // Prompt sent to OpenAI.
+  let prompt = `Reply to any message like the character ${character} and you must answer
 The previous messages are: 
 ${stringifiedPreviousMessages} 
 
 The users name is ${username} and he said: "${message}"
-Only respond with a message.`;
+Only respond with a message and dont include your name in the response.`;
   return prompt;
 };
 
