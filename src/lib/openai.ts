@@ -30,7 +30,7 @@ export const template = ({
     .join('\n');
 
   // Prompt sent to OpenAI.
-  let prompt = `Reply to any message like the character ${character} and you must answer
+  let prompt = `Your reply should be in the style of ${character}.
 The previous messages are: 
 ${stringifiedPreviousMessages} 
 
