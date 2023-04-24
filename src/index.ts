@@ -20,7 +20,7 @@ const client = new Client({
   ],
 });
 
-// If bot is ready, log 'Ready!'
+// When bot is ready, log 'Ready!'
 client.on('ready', () => {
   console.log('Ready!');
 });
@@ -29,7 +29,7 @@ client.on('ready', () => {
 client.on('messageCreate', async (msg) => {
   if (!client.user) return;
   if (!msg.mentions.has(client.user.id)) return;
-  // replace(/<@\d+>/gi, '');
+
   let content = msg.cleanContent.trim();
 
   // Reads the last 10 previous comments in chat for context/memory
@@ -50,7 +50,7 @@ client.on('messageCreate', async (msg) => {
   // Generating a reply to user
   let reply = (await generateMessage({ prompt: prompt, userId: msg.author.id }))
     .replace(/^\"|\"$/gi, '')
-    .replace(/luffy{1,2}:/gi, '')
+    // .replace(/luigi{1,2}:/gi, '') // Add the name of your character here IF the reply from your bot starts with "Luigi: ...". It will remove "Luigi:" At the start
     .trim();
 
   //Sending reply
