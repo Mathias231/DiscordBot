@@ -8,3 +8,9 @@ For this project I'm using OpenAI to generate a template of him and his replies 
 
 - You need to have an OpenAI Account
 - Your own discord bot
+
+# Getting started
+
+```
+Clone repository
+```
