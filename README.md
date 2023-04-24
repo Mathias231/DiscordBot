@@ -10,7 +10,7 @@ For this project I'm using OpenAI to generate a template of him and his replies 
 - Your own discord bot
 
 # Getting started
-
-```
 Clone repository
+```
+git clone https://github.com/Mathias231/DiscordBot.git
 ```
