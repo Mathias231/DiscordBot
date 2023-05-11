@@ -1,6 +1,6 @@
 import { Configuration, OpenAIApi } from 'openai';
 import { config } from 'dotenv';
-import { character } from './character';
+import { character, franchise, personality } from './character';
 import { GenerateMessageParams, TemplateParams } from '../types/global';
 
 config();
@@ -11,6 +11,7 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
+// ⚙️🤖 Creating THE final template that is sent to OpenAi.
 export const template = ({
   username,
   message,
@@ -25,14 +26,18 @@ export const template = ({
 
   // Prompt sent to OpenAI.
   let prompt = `Your reply should be in the style of ${character}.
+She is from ${franchise}.
+Their personalities are: ${personality}
+
 The previous messages are: 
-${stringifiedPreviousMessages} 
+${stringifiedPreviousMessages}
 
 The users name is ${username} and he said: "${message}"
-Only respond with a message and dont include your name in the response.`;
+Remember to keep the reply simple and easy.`;
   return prompt;
 };
 
+// ⚙️🤖 Generates the response and replies back to user
 export const generateMessage = async ({
   prompt,
   userId,
