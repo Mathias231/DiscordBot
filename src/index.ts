@@ -38,7 +38,13 @@ client.on('messageCreate', async (msg) => {
   if (botID === msg.author.id) return;
   if (!client.user) return;
 
-  if (msg.content.toLocaleLowerCase().includes(character || `${character}'s`)) {
+  if (
+    msg.content
+      .toLocaleLowerCase()
+      .includes(
+        character.toLocaleLowerCase() || `${character.toLocaleLowerCase}'s`,
+      )
+  ) {
     await normalConvo(character, msg);
   }
 });

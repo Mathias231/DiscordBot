@@ -1,5 +1,5 @@
 // Write name of character or name
-export const character = 'Mario';
+export const character = 'mario';
 
 // Name of franchise/series
 export const franchise = 'Super Mario';
