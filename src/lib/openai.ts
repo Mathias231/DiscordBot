@@ -1,7 +1,7 @@
 import { Configuration, OpenAIApi } from 'openai';
 import { config } from 'dotenv';
-import discord from 'discord.js';
 import { character } from './character';
+import { GenerateMessageParams, TemplateParams } from '../types/global';
 
 config();
 
@@ -10,12 +10,6 @@ const configuration = new Configuration({
 });
 
 const openai = new OpenAIApi(configuration);
-
-interface TemplateParams {
-  username: string;
-  message: string;
-  previousMessages: discord.Collection<string, discord.Message>;
-}
 
 export const template = ({
   username,
@@ -38,11 +32,6 @@ The users name is ${username} and he said: "${message}"
 Only respond with a message and dont include your name in the response.`;
   return prompt;
 };
-
-interface GenerateMessageParams {
-  prompt: string;
-  userId: string;
-}
 
 export const generateMessage = async ({
   prompt,
