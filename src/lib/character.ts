@@ -1,4 +1,4 @@
-// Write name of character or name
+// Write name of character or name | Do NOT add any special characters. If you do that then the user has to type "Hello Mario." for it to reply (,.-+*^`!"#¤%&)
 export const character = 'mario';
 
 // Name of franchise/series
